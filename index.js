@@ -1,4 +1,5 @@
 const express = require('express');
+const {clientRouter} = require("./views/routers/client");
 const {engine} = require('express-handlebars');
 
 const app = express();
@@ -13,6 +14,9 @@ app.engine('.hbs', engine({
     // helpers: handlebarsHelpers,
 }));
 app.set('view engine', '.hbs');
+
+app.use('/client', clientRouter);
+
 
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');
