@@ -2,6 +2,7 @@ const express = require('express');
 const {homeRouter} = require("./views/routers/home");
 const {clientRouter} = require("./views/routers/client");
 const {engine} = require('express-handlebars');
+const {db} = require('./utils/db');
 
 const app = express();
 
