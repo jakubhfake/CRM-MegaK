@@ -19,6 +19,14 @@ app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
+app.get('/test', (req, res) => {
+    db.create({
+        name: 'test1234',
+        mail: 'db@db.db',
+    })
+    console.log('New client added :)');
+    res.send('It works! New client added :)')
+})
 
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');

@@ -1,6 +1,1 @@
-[
-  {
-    "name": "Tester",
-    "mail": "tester@example.com"
-  }
-]
+[{"name":"Tester","mail":"tester@example.com"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"},{"name":"test1234","mail":"db@db.db"}]
