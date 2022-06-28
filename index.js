@@ -25,8 +25,9 @@ app.get('/test', (req, res) => {
         mail: 'db@db.db',
     })
     console.log('New client added :)');
-    res.send('It works! New client added :)')
+    res.json(db.getAll());
 })
+
 
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');
