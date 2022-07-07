@@ -20,12 +20,11 @@ app.set('view engine', '.hbs');
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
 app.get('/test', (req, res) => {
-    db.create({
-        name: 'test1234',
-        mail: 'db@db.db',
-    })
-    console.log('New client added :)');
-    res.json(db.getAll());
+    db.update( 'ad729d59-a067-44a6-99f2-0d37b73f293d',
+        { name: '1234'},
+        );
+    console.log('Client data are update :)');
+    res.send('Client data are update :)');
 })
 
 
