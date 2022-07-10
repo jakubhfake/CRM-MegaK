@@ -14,7 +14,7 @@ app.use(express.json());
 app.engine('.hbs', engine({
     extname: '.hbs',
     // helpers: handlebarsHelpers,
-}));
+}));2q
 app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);

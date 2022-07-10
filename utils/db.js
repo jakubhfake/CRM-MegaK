@@ -36,7 +36,10 @@ class Db {
         });
         writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
     }
-
+    delete(id) {
+        this._data = this._data.filter(oneObj => oneObj.id !== id);
+        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
+    }
 }
 
 const db = new Db('client.json');
