@@ -11,13 +11,17 @@ class Db {
     async _load() {
         this._data = JSON.parse(await readFile(this.dbFileName, 'utf8'));
     }
+    _save() {
+        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
+    }
+
     //there will be a problem when few users will create new object
     create(obj) {
         this._data.push({
             id: uuid(),
             ...obj,
         });
-        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
+        this._save();
     }
 
     getAll() {
@@ -34,11 +38,11 @@ class Db {
                return oneObj;
            }
         });
-        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
+        this._save();
     }
     delete(id) {
         this._data = this._data.filter(oneObj => oneObj.id !== id);
-        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8');
+        this._save();
     }
 }
 
