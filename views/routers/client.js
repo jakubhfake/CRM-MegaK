@@ -4,7 +4,7 @@ const clientRouter = express.Router();
 
 clientRouter
     .get('/', (req, res) => {
-        res.send('Pobierz wszystkich użytkowników!');
+        res.render('client/list-all');
     })
     .get('/:id', (req, res) => {
         res.send('Pobierz pojedyńczdego użytkownika!');
