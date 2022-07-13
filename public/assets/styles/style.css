@@ -2,7 +2,7 @@ table {
     text-align: left;
 }
 
-thead tr {
+thead tr, .header-of-left th {
     background: grey;
 }
 
@@ -18,3 +18,4 @@ tr:nth-child(2n) {
 th, td {
     padding: 6px;
 }
+

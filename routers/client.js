@@ -10,7 +10,9 @@ clientRouter
         });
     })
     .get('/:id', (req, res) => {
-        res.send('Pobierz pojedyńczdego użytkownika!');
+        res.render('client/single', {
+            client: clientsDb.getOne(req.params.id),
+        });
     })
     .post('/', (req, res) => {
         res.send('Dodaj użytkownika!');
