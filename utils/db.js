@@ -25,7 +25,7 @@ class Db {
     }
 
     getAll() {
-        return this._data
+        return this._data;
     }
 
     getOne(id) {

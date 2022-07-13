@@ -1,0 +1,20 @@
+table {
+    text-align: left;
+}
+
+thead tr {
+    background: grey;
+}
+
+tr {
+    background: darkseagreen;
+    margin: 2px;
+}
+
+tr:nth-child(2n) {
+    background: #6ac26a;
+}
+
+th, td {
+    padding: 6px;
+}

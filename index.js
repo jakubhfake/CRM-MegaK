@@ -1,6 +1,6 @@
 const express = require('express');
-const {homeRouter} = require("./views/routers/home");
-const {clientRouter} = require("./views/routers/client");
+const {homeRouter} = require("./routers/home");
+const {clientRouter} = require("./routers/client");
 const {engine} = require('express-handlebars');
 const {clientsDb} = require('./utils/db');
 

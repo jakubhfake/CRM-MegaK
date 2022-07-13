@@ -1,10 +1,13 @@
 const express = require('express');
+const {clientsDb} = require('../utils/db')
 
 const clientRouter = express.Router();
 
 clientRouter
     .get('/', (req, res) => {
-        res.render('client/list-all');
+        res.render('client/list-all', {
+            clients: clientsDb.getAll(),
+        });
     })
     .get('/:id', (req, res) => {
         res.send('Pobierz pojedyńczdego użytkownika!');
