@@ -1,5 +1,7 @@
 table {
     text-align: left;
+    width: 80%;
+    margin: 0 auto;
 }
 
 thead tr, .header-of-left th {
@@ -17,5 +19,9 @@ tr:nth-child(2n) {
 
 th, td {
     padding: 6px;
+}
+
+td button {
+    margin: 2px;
 }
 
