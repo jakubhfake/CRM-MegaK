@@ -15,9 +15,14 @@ clientRouter
         });
     })
     .post('/', (req, res) => {
-        clientsDb.create(req.body);
+        const id = clientsDb.create(req.body);
+        
+        console.log(req.body);
+        console.log('Id nowego klienta', id)
+
         res.render('client/added', {
             name: req.body.name,
+            id,
         });
     })
     .put('/:id', (req, res) => {

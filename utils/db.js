@@ -17,11 +17,13 @@ class Db {
 
     //there will be a problem when few users will create new object
     create(obj) {
+        const id = uuid();
         this._data.push({
-            id: uuid(),
+            id,
             ...obj,
         });
         this._save();
+        return id;
     }
 
     getAll() {
