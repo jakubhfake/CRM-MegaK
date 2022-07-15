@@ -15,7 +15,10 @@ clientRouter
         });
     })
     .post('/', (req, res) => {
-        res.send('Dodaj użytkownika!');
+        clientsDb.create(req.body);
+        res.render('client/added', {
+            name: req.body.name,
+        });
     })
     .put('/:id', (req, res) => {
         res.send('Zmodyfikuj użytkownika!');
@@ -23,6 +26,9 @@ clientRouter
     .delete('/:id', (req, res) => {
         clientsDb.delete(req.params.id);
         res.render('client/deleted');
+    })
+    .get('/form/add', (req, res) => {
+        res.render('client/forms/add');
     })
 
 module.exports = {
