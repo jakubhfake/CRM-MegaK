@@ -16,9 +16,6 @@ clientRouter
     })
     .post('/', (req, res) => {
         const id = clientsDb.create(req.body);
-        
-        console.log(req.body);
-        console.log('Id nowego klienta', id)
 
         res.render('client/added', {
             name: req.body.name,
@@ -26,7 +23,11 @@ clientRouter
         });
     })
     .put('/:id', (req, res) => {
-        res.send('Zmodyfikuj użytkownika!');
+        clientsDb.update(req.params.id, req.body);
+        res.render('client/modified', {
+            name: req.body.name,
+            id: req.params.id,
+        });
     })
     .delete('/:id', (req, res) => {
         clientsDb.delete(req.params.id);
@@ -34,6 +35,11 @@ clientRouter
     })
     .get('/form/add', (req, res) => {
         res.render('client/forms/add');
+    })
+    .get('/form/edit/:id', (req, res) => {
+        res.render('client/forms/edit', {
+            client: clientsDb.getOne(req.params.id),
+        });
     })
 
 module.exports = {

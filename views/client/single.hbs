@@ -36,4 +36,11 @@
         {{/if}}
     </tbody>
 </table>
-{{> go-to-clients}}
+<p>
+<form method="GET" action="/client/form/edit/{{client.id}}">
+    <button type="submit">Edytuj</button>
+</form>
+</p>
+<p>
+    {{> go-to-clients}}
+</p>

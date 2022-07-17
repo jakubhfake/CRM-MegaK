@@ -31,6 +31,9 @@
                 <form method="POST" action="/client/{{this.id}}?_method=DELETE">
                     <button type="submit">Usuń</button>
                 </form>
+                <form method="GET" action="/client/form/edit/{{this.id}}">
+                    <button type="submit">Edytuj</button>
+                </form>
             </td>
         </tr>
     {{/each}}
