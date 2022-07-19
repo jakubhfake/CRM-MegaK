@@ -29,11 +29,11 @@ class Db {
     }
 
     getAll() {
-        return this._data;
+        return this._data.map(obj => new ClientRecord(obj));
     }
 
     getOne(id) {
-        return this._data.find(oneObj => oneObj.id === id);
+        return new ClientRecord(this._data.find(oneObj => oneObj.id === id));
     }
 
     update(id, newObj){
