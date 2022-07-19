@@ -21,10 +21,10 @@ class Db {
     //there will be a problem when few users will create new object
     create(obj) {
         const id = uuid();
-        this._data.push({
+        this._data.push(new ClientRecord({
             id,
             ...obj,
-        });
+        }));
         this._save();
         return id;
     }
