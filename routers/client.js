@@ -1,10 +1,12 @@
 const express = require('express');
+const {ClientRecord} = require("../recored/client-record");
 const {clientsDb} = require('../utils/db')
 
 const clientRouter = express.Router();
 
 clientRouter
     .get('/', (req, res) => {
+
         res.render('client/list-all', {
             clients: clientsDb.getAll(),
         });
